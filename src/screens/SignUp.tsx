@@ -4,11 +4,12 @@ import LogoSvg from '@assets/logo.svg'
 import BackgroundImg from '@assets/background.png'
 import { Input } from '@components/input'
 import { Buttom } from '@components/Button'
+import { Platform } from 'react-native'
 
 export function SignUp() {
     return (
         <ScrollView contentContainerStyle={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
-            <VStack flex={1} bg="gray.700" padding={10} pb={16}>
+            <VStack flex={1}  px={10}  pb={Platform.OS === "ios" ? 60 : 16}>
                 <Image 
                 source={BackgroundImg} 
                 alt="Pessoas treinando" 
