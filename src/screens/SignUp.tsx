@@ -20,7 +20,8 @@ export function SignUp() {
         <ScrollView contentContainerStyle={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
             <VStack flex={1}  px={10}  pb={Platform.OS === "ios" ? 60 : 16}>
                 <Image 
-                source={BackgroundImg} 
+                source={BackgroundImg}
+                defaultSource={BackgroundImg} 
                 alt="Pessoas treinando" 
                 resizeMode='contain'
                 position="absolute"
