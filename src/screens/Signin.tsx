@@ -1,5 +1,10 @@
 import { VStack, Image, Text, Center, Heading, ScrollView } from 'native-base'
+import { useNavigation} from '@react-navigation/native';
+
 import { Platform } from 'react-native'
+
+
+import {AuthNavigatorRoutesProps} from '@routes/auth.routes'
 
 import LogoSvg from '@assets/logo.svg'
 import BackgroundImg from '@assets/background.png'
@@ -7,9 +12,15 @@ import { Input } from '@components/input'
 import { Buttom } from '@components/Button'
 
 export function SignIn() {
+    const navigation = useNavigation<AuthNavigatorRoutesProps>()
+
+    function handleNewAccount(){
+        navigation.navigate('signUp');
+    }
+
     return (
         <ScrollView contentContainerStyle={{flexGrow: 1}} showsVerticalScrollIndicator={false}>
-            <VStack flex={1} px={10} pb={Platform.OS === "ios" ? 40 : 16}>
+            <VStack flex={1} px={10} pb={Platform.OS === "ios" ? 20 : 16}>
                 <Image 
                 source={BackgroundImg} 
                 alt="Pessoas treinando" 
@@ -53,8 +64,9 @@ export function SignIn() {
                     </Text>
 
                     <Buttom  
-                    title="Criar conta"
-                    variant="outline"
+                        onPress={handleNewAccount}
+                        title="Criar conta"
+                        variant="outline"
                     />
                 </Center>
             </VStack>
