@@ -4,7 +4,7 @@ import { useNavigation} from '@react-navigation/native';
 
 import LogoSvg from '@assets/logo.svg'
 import BackgroundImg from '@assets/background.png'
-import { Input } from '@components/input'
+import { Input } from '@components/Input'
 import { Buttom } from '@components/Button'
 import { Platform } from 'react-native'
 

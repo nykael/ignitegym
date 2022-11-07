@@ -8,7 +8,7 @@ import {AuthNavigatorRoutesProps} from '@routes/auth.routes'
 
 import LogoSvg from '@assets/logo.svg'
 import BackgroundImg from '@assets/background.png'
-import { Input } from '@components/input'
+import { Input } from '@components/Input'
 import { Buttom } from '@components/Button'
 
 export function SignIn() {
