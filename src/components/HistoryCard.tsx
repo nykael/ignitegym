@@ -5,7 +5,7 @@ export function HistoryCard() {
     return(
         <HStack w="full" px={5} py={3} mb={4} bg="gray.600" rounded="md" alignItems="center" justifyContent="space-between">
             <VStack>
-                <Heading color="white" fontSize="md" textTransform="capitalize">
+                <Heading color="white" fontSize="md" fontFamily="heading" textTransform="capitalize">
                   Costas
                 </Heading>
 

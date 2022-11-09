@@ -22,7 +22,7 @@ export function ExerciseCard({ title ,...rest} : Props) {
                 />
 
                 <VStack flex={1}>
-                    <Heading color="white" fontSize="lg">
+                    <Heading color="white" fontSize="lg" fontFamily="heading">
                         {title}
                     </Heading>
 

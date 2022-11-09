@@ -26,6 +26,7 @@ export function HomeHeader() {
             <Heading 
               color="gray.100"
               fontSize="md"
+              fontFamily="heading"
              >
                 Nykael
             </Heading>
