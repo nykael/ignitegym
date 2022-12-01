@@ -3,13 +3,15 @@ import { useNavigation} from '@react-navigation/native';
 import { useForm, Controller } from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import axios from 'axios'; 
 
+import { api } from '@services/api';
 
 import LogoSvg from '@assets/logo.svg'
 import BackgroundImg from '@assets/background.png'
-import { Input } from '@components/Input'
+import { Input } from '../components/input';
 import { Buttom } from '@components/Button'
-import { Platform } from 'react-native'
+import { Alert, Platform } from 'react-native'
 
 type FormDataProps = {
     name: string;
@@ -37,8 +39,17 @@ export function SignUp() {
         navigation.goBack()
     }
 
-    function handleSingUp(data: FormDataProps) {
-        console.log(data)
+    async function handleSingUp( {name, email, password}: FormDataProps) {
+        try {
+            const response = await api.post('/users', {name, email, password})
+            console.log(response.data)
+            
+        } catch (error) {
+            if(axios.isAxiosError(error)){
+                Alert.alert(error.response?.data.message)
+            }
+            
+        }
     }
 
     return (
