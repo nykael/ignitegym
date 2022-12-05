@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { TouchableOpacity } from "react-native";
 import { Center, ScrollView, VStack, Skeleton, Text, Heading, useToast } from "native-base";
+import { TouchableOpacity } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
 
@@ -9,7 +9,7 @@ import * as FileSystem from 'expo-file-system';
 import { ScreenHeader } from "@components/ScreenHeader";
 import { UserPhoto } from "@components/UserPhoto";
 import { Buttom } from "@components/Button";
-import { Input } from "@components/Input";
+import { Input } from "../components/input";
 
 const PHOTO_SIZE = 33
 
