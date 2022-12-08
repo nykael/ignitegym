@@ -30,7 +30,6 @@ export function Home() {
         
         const response = await api.get('/groups')
         setGroups(response.data)
-        console.log(response.data)
         
       } catch (err) {
         const isAppError = err instanceof AppError
