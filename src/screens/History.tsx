@@ -7,6 +7,8 @@ import { AppError } from "@utils/AppError";
 import { api } from "@services/api";
 import { useFocusEffect } from "@react-navigation/native";
 import { HistoryByDayDTO } from "@dtos/HistoryByDayDTO";
+import { Loading } from "@components/Loading";
+import { useAuth } from "@hooks/useAuth";
 
 
 export function History() {
@@ -14,6 +16,8 @@ export function History() {
     const [exercises, setExercises] = useState<HistoryByDayDTO[]>([])
     
     const toast = useToast()
+
+    const {refreshedToken} = useAuth()
 
     async function  fetchHistory() {
         try {
@@ -38,12 +42,14 @@ export function History() {
 
     useFocusEffect(useCallback(() => {
         fetchHistory()
-    }, []))
+    }, [refreshedToken]))
 
    return(
     <VStack flex={1}>
        <ScreenHeader title="Histórico de Exercícios" />
 
+        {
+            isLoading ? <Loading /> : exercises?.length &&
         <SectionList 
             sections={exercises}
             keyExtractor={item => item.id}
@@ -66,6 +72,7 @@ export function History() {
                 </Text>
             )}
         />
+        }
     </VStack>
    ) 
 }
